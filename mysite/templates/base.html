@@ -1,0 +1,153 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/m.css">
+</head>
+<body>
+    <div class="main">
+        <header>
+            <div>
+                <div class="topbar">
+                    <div class="topbar-left">
+                        <p>
+                            <a href="tel:+91 7574843784"><i class="fa-solid fa-phone"></i> +91 7574843784 </a>
+                        </p>
+                    </div>
+                    <div class="topbar-center">
+                        <p>
+                            <a href="whatshapp"><i class="fa-brands fa-whatsapp"></i></a>
+                            <a href="facebook"> <i class="fa-brands fa-facebook"></i></i></a>
+                            <a href="instagram"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="linkedin"><i class="fa-brands fa-linkedin"></i></a>
+                        </p>
+                    </div>
+                    <div class="topbar-right">
+                        <ul>
+                            <li>
+                                <a href="maclloc.com"><i class="fa-solid fa-envelope"></i>
+                                    info.macllocinstitute@gmail.com</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="main1">
+                    <div class="logo">
+                        <img src="../static/image/logo.png" height="60px" width="242px">
+                    </div>
+                    <div class="navbar">
+                            {% url 'maclloc' as home %}
+                            <a id="{% if request.path == home %}active{% endif %}" href="{{home}}">Home</a>
+                            {% url 'course' as course %}
+                            <div class="dropdown">
+                                <button class="dropbtn"><a id="{% if request.path == course %}active{% endif %}" href="{{course}}">
+                                    Course<i class="fa fa-caret-down"></i></a>
+                                  
+                                </button>
+                                <div class="dropdown-content">
+                                    <div class="dc">
+                                        <div>
+                                            <a href="#">Web Development</a>
+                                            <a href="#">Full Stack Development</a>
+                                            <a href="#">Flutter Development</a>
+                                            <a href="#">Android Development</a>
+                                            <a href="#">UI-UX Design</a>
+                                        </div>
+                                        <div>
+                                            <a href="#">Python</a>
+                                            <a href="#">Blockchain Development</a>
+                                            <a href="#">Game Design &Development</a>
+                                            <a href="#">Web Design</a>
+                                        </div>
+                                        <div>
+                                            <a href="#">Digital Marketing</a>
+                                            <a href="#">IOS Development</a>
+                                            <a href="#">Master In Multimedia</a>
+                                        </div>
+                                    </div>
+                                </div>
+                              </div>
+                            {% url 'college_course' as college_course %}
+                            <a id="{% if request.path == college_course %}active{% endif %}"
+                                href="{{college_course}}">College Course</a>
+                            {% url 'activities' as activities %}
+                            <a id="{% if request.path == activities %}active{% endif %}"
+                                href="{{activities}}">Activities</a>
+                            {% url 'about_us' as about_us %}
+                            <a id="{% if request.path == about_us %}active{% endif %}" href="{{about_us}}">About us</a>
+                            {% url 'blog' as blog %}
+                            <a id="{% if request.path == blog %}active{% endif %}" href="{{blog}}">Blog</a>
+                            {% url 'contact' as contact %}
+                            <a id="{% if request.path == contact %}active{% endif %}" href="{{contact}}">Contact</a>
+                      
+                    </div>
+                </div>
+            </div>
+        </header>
+        {% block content %}
+        {% endblock %}
+        <footer>
+            <div class="fmain1">
+                <div class="fmain">
+                    <div class="f">
+                        <div>
+                            <img src="../static/image/logo.png" alt="" width="auto" height="60px">
+                        </div>
+                        <div class="footertitle">
+                            <p>કમ્પ્યુટર IT હવે Skill નહીં પણ જરૂરીયાત બની રહી છે,તો આજે જ<br> જોડાઓ Maclloc Institute
+                                સાથે...</p>
+                        </div>
+                        <div class="footericon">
+                            
+                                <a href="whatshapp"><i class="fa-brands fa-whatsapp"></i></a>
+                                <a href="facebook"> <i class="fa-brands fa-facebook"></i></a>
+                                <a href="instagram"><i class="fa-brands fa-instagram"></i></a>
+                                <a href="linkedin"><i class="fa-brands fa-linkedin"></i></a>
+                            
+                        </div>
+                    </div>
+                    <div class="f">
+                        <div class="ctitle">
+                            <h3>Pages</h3>
+                        </div>
+                        <div class="cpoints">
+                            <ul>
+                                <li><a href="#"><div class="fa-solid fa-caret-right"></div>Courses</a></li>
+                                <li><a href="#"><div class="fa-solid fa-caret-right"></div>College Courses</a></li>
+                                <li><a href="#"><div class="fa-solid fa-caret-right"></div>Gallery</a></li>
+                                <li><a href="#"><div class="fa-solid fa-caret-right"></div>Events</a></li>
+                                <li><a href="#"><div class="fa-solid fa-caret-right"></div>About Us</a></li>
+                                <li><a href="#"><div class="fa-solid fa-caret-right"></div>Contact Us</a></li>
+                                <li><a href="#"><div class="fa-solid fa-caret-right"></div>Blog</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="f">
+                        <div class="ctitle">
+                            <h3>Contacts</h3>
+                        </div>
+                        <div class="cpoints">
+                            <ul>
+                                <li><a href="tel:+91 7574843784"><div class="fa-solid fa-phone"></div> +91 7574843784 </a>
+                                </li>
+                                <li><a href="maclloc.com"><div class="fa-solid fa-envelope"></div>
+                                        info.macllocinstitute@gmail.com</a></li>
+                                <li><a href="#"><div class="fa-solid fa-location-dot" style="font-size: 20px;"></div>
+                                        219, Raghuvir Shoppers,near lajamni chowk,mota
+                                        <br>varachha, surat-394101</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                
+                <div class="lpara">
+                    <h4>© 2023 <a href="maclloc.com">MACLLOC DESIGN AND MULTIMEDIA INSTITUTE</a>
+                        Developed By <a href="trueline">Trueline Solution</a></h4>
+                </div>
+        </footer>
+</body>
+</html>

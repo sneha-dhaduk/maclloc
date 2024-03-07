@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% block content %}
+    <section>
+        <div class="contactbanner">
+            <h1 style="visibility: visible;">Contact Us</h1>
+        </div>
+    </section>
+    <section>
+        <div class="near1">
+           <div class="ne1">
+            <div class="near">
+            <div class="nearicon">
+                <a href="#"><i class="fa-solid fa-location-dot"></i></a>
+            </div>
+            <div class="neartitle">
+                <h4>Address</h4>
+                <p>219, Raghuvir Shoppers,
+                    near lajamni<br> chowk,
+                    mota varachha, surat-394101</p>
+            </div>
+       </div>
+       <div class="near">
+            <div class="nearicon">
+                <a href="#"><i class="fa-solid fa-phone"></i></a>
+            </div>
+            <div class="neartitle">
+                <h4>Phone</h4>
+                <a href="tel:+91 7574843784">+91 7574843784</a>
+            </div>
+       </div>
+       <div class="near">
+            <div class="nearicon">
+                <a href="#"><i class="fa-solid fa-envelope"></i></a>
+            </div>
+            <div class="neartitle">
+                <h4>Email</h4>
+                <a href="maclloc.com">info.macllocinstitute@gmail.com</a>
+            </div>
+       </div></div>
+        </div>
+    </section>
+    <section>
+    <div class="form1">
+        <div class="formfield">
+            <form method="post" action="{% url 'contact' %}">
+                {% csrf_token %}
+                {% for field in form %}
+                    <!-- <label class="label-class">{{ field.label }}</label> -->
+                    {{field}}
+                {% endfor %}
+                <button type='submit' class="btn2">Submit</button>
+            </form>
+        </div>
+    </div>
+        
+    </section>
+{% endblock %}

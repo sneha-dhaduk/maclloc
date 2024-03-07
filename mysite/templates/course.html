@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+<section>
+    <div class="hero">
+        <h1 style="visibility: visible;">Course</h1>
+    </div>
+</section>
+<section>
+    <div class="imgfour">
+        <div class="imgfour1">
+            {% for i in rec %}
+            <div class="card">
+                <div class="abc11">
+                <img src="/media/{{i.image}}" alt="Avatar" style="width:273px" >
+                </div>
+                <div class="container">
+                    <a href="#"><h4><b>{{i.contain}}</b></h4></a>
+                    <p><strong>Course Duration</strong>:{{i.months}} Months</p>
+                    <a class="btn1" href="/detail/{{i.id}}">Read More</a> 
+                </div>
+            </div>    
+            {% if forloop.counter|divisibleby:4 %} </div><div class="imgfour1">{% endif %}
+
+            {% endfor %}
+    </div>
+</section>
+{% endblock %}

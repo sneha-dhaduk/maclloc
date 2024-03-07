@@ -1,0 +1,136 @@
+{% extends 'base.html' %}
+    {% block content %}
+    <section>
+        <div class="mainimg"> </div>
+    </section>
+    <section>
+        <div class="oc">
+            <div class="oc1"> <h2>OUR COURSES</h2></div>
+           <div class="oc2">
+                <p>In the computer software field we have brought all the courses which the students
+                    can learn in less time and easier. Each of these courses has<br> very good scope and the student can
+                    build a good career in it.</p>
+            </div>
+            <form method="get">
+                <input type="text" name="search">
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+        <div class="imgfour">
+        <div class="imgfour1">
+            {% for i in rec %}
+            <div class="card">
+                <div class="abc11">
+                <img src="/media/{{i.image}}" alt="Avatar" style="width:273px" >
+                </div>
+                <div class="container">
+                    <a href="#"><h4><b>{{i.contain}}</b></h4></a>
+                    <p><strong>Course Duration</strong>:{{i.months}} Months</p>
+                    <a class="btn1" href="/detail/{{i.id}}">Read More</a> 
+                </div>
+            </div> 
+            {% endfor %}
+        </div>
+        </div>
+        <div style="margin:50px 700px;">
+            <a class="btn1" href="/course/">View More</a>
+        </div> 
+    </section>
+    <section>
+        <div class="india">
+            <div class="in">
+                <!-- <img src="/static/image/home_img.jpg" alt="" height="463px" width="555px"> -->
+            </div>
+            <div class="india1">
+                <div class="india2">
+                    <h1>Why Maclloc Institute?</h1>
+                </div>
+                <div class="india3">
+                    <p>♦&nbsp; ચાલુ કોર્ષ દરમિયાન Full support</p>
+                    <p>♦&nbsp; Maclloc માં વિધાથીને કોર્ષની સાથે 100% Job Placement ની ગેરેંટી આપવામાં આવે છે</p>
+                    <p>♦&nbsp; Full Expertise Faculty</p>
+                    <p>♦&nbsp; Full Facility and High Infrastructure</p>
+                    <p>♦&nbsp; Course માટેની Full Value આપતી એક માત્ર સંસ્થા</p>
+                    
+                </div>
+                <div class="india3">
+                    <p>કમ્પ્યુટર IT હવે Skill નહીં પણ જરૂરીયાત બની રહી છે, તો આજે જ જોડાઓ Maclloc<br> Institute સાથે...</p>
+                </div>
+                <div>
+                    <a class="btn1" href="#">READ MORE</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+    <div class="ministarstar">
+        <div class="ministar">
+            <h2>Maclloc Institute Facilities</h2>
+        </div>
+        <div class="mini">
+            <div class="mini2">
+                <div class="mini22"><img src="/static/image/teacher.png" alt="" height="64px" width="64px"></div>
+                <div class="mini23"><h4>Industry Expert Trainers</h4></div>
+            </div>
+            <div class="mini2">
+                <div class="mini22"><img src="/static/image/guidance.png" alt="" height="64px" width="64px"></div>
+                <div class="mini23"><h4>Career Counselling</h4></div>
+            </div>
+            <div class="mini2">
+                <div class="mini22"><img src="/static/image/human_resources.png" alt="" height="64px" width="64px"></div>
+                <div class="mini23"><h4>100% Placement Assistance</h4></div>
+            </div>
+            <div class="mini2">
+                <div class="mini22"><img src="/static/image/seo.png" alt="" height="64px" width="64px"></div>
+                <div class="mini23"><h4>Softskill Improvement Sessions</h4></div>
+            </div>
+        </div>
+        <div class="mini1">
+            <div class="mini2">
+                <div class="mini22"><img src="/static/image/programmer.png" alt="" height="64px" width="64px"></div>
+                <div class="mini23"><h4>Job Oriented Courses</h4></div>
+            </div>
+            <div class="mini2">
+                <div class="mini22"><img src="/static/image/meeting.png" alt="" height="64px" width="64px"></div>
+                <div class="mini23"><h4>Interview Support</h4></div>
+            </div>
+            <div class="mini2">
+                <div class="mini22"><img src="/static/image/conference.png" alt="" height="64px" width="64px"></div>
+                <div class="mini23"><h4>Personalized Attention</h4></div>
+            </div>
+            <div class="mini2">
+                <div class="mini22"><img src="/static/image/diversity.png" alt=""></div>
+                <div class="mini23"
+                ><h4>Lifetime Support Community</h4></div>
+            </div>
+        </div>
+    </div>
+    </section>
+    <section>
+        <div class="testomonial-area">
+            <div class="container1">
+                <div class="row review-heading"> 
+                    <h2 class="text-center">What Our Student Says</h2>
+                    <p class="text-center">So far many students have taken up the education in our academy and have built a
+                        good career in their field. Some of them are presenting<br> their Review about our Acedemy</p>
+                </div>
+            </div>
+            {% for i in rec1 %}
+                <div class="student1">
+                    <div class="studentphoto">
+                        <img src="/media/{{i.photo}}" alt="Avatar">
+                    </div>
+                    <div class="studentdetails">
+                        <h3>{{i.name}}</h3>
+                        {% load custom_filter %}
+                        {% with data=i.review|split %}
+                        {% for element in data %}
+                            <p>{{element}}</p>
+                        {% endfor %}
+                        {% endwith %} 
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+{% endblock %}     

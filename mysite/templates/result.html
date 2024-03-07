@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% block content %}
+    <section>
+        <div>
+            <img src="/media/{{object.image1}}" height="450vh" width= "100%">
+        </div>
+    </section>
+    {% if object.paragraph != '3' %}
+        <section>
+                <div class="paragraphdetail">
+                    {% load custom_filter %}
+                    {% with data=object.paragraph|split %}
+                    {% for element in data %}
+                        <p>{{element}}</p>
+                    {% endfor %}
+                    {% endwith %} 
+                </div>
+        </section>
+    {% endif %}
+    <section>
+        <div class="mimage">
+            <div class="musicstar1" >
+                <img src="/media/{{object.image2}}" height="490px" width="700px">
+            </div>
+            <div class="musicstar">
+                <div class="music">
+                    <h2>{{object.title}}</h2>
+                </div>
+                <div class="music1">
+                    {% load custom_filter %}
+                    {% with data=object.contain1|split %}
+                    {% for element in data %}
+                        <ul class="all-course-detail">
+                            <li><div class="fa-solid fa-hand-point-right"></div>{{element}}</li> 
+                        </ul>
+                    {% endfor %}
+                    {% endwith %}    
+                </div>
+            </div>
+        </div>
+    </section>
+    {% if object.banner != '12' %}
+            <section>
+                <div class="mimage">
+                    <div class="music11">
+                        {% load custom_filter %}
+                        {% with data=object.imagecontain|split %}
+                        {% for element in data %}
+                            <ul class="all-course-detail">
+                                <li><div class="fa-solid fa-hand-point-right"></div>{{element}}</li> 
+                            </ul>
+                        {% endfor %}
+                        {% endwith %} 
+                    </div>
+                    <div class="music2">
+                        <img src="/media/{{object.banner}}" height="490px" width="'700px">
+                    </div>
+                </div>
+            </section>
+    {% endif %}
+    {% endblock %}
